@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin — GuabirubaTem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/home.html" class="brand">Guabiruba<span class="accent">Tem</span> <span style="font-size:11px;font-weight:500;color:#9ca3af;margin-left:6px">admin</span></a>
+      <nav class="nav">
+        <a href="/home.html">Ver site</a>
+        <a href="#" id="logout-btn">Sair</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- LOGIN -->
+  <div class="login-wrap" id="login-view">
+    <form class="login-card" id="login-form">
+      <h1>Entrar no painel</h1>
+      <p>Acesso restrito à equipe GuabirubaTem.</p>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="username" required />
+      </div>
+      <div class="field">
+        <label for="password">Senha</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required />
+      </div>
+      <button class="btn btn-primary btn-block" type="submit">Entrar</button>
+      <div class="error" id="login-error"></div>
+      <p class="hint">Demo: admin@guabirubatem.com.br / guabiruba2026</p>
+    </form>
+  </div>
+
+  <!-- ADMIN -->
+  <main class="admin-shell container" id="admin-view" style="display:none">
+    <div class="admin-head">
+      <h1>Empresas cadastradas</h1>
+      <div class="right">
+        <button class="btn btn-primary" id="new-btn">+ Nova empresa</button>
+      </div>
+    </div>
+    <div class="admin-grid" id="admin-list"></div>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-bg" id="modal">
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <h2 id="modal-title">Nova empresa</h2>
+        <button class="close" id="modal-close" aria-label="Fechar">×</button>
+      </div>
+      <form id="empresa-form">
+        <div class="modal-body">
+          <input type="hidden" name="originalSlug" />
+          <div class="row-2">
+            <div class="field">
+              <label>Nome *</label>
+              <input name="nome" required maxlength="120" />
+            </div>
+            <div class="field">
+              <label>Slug (URL)</label>
+              <input name="slug" placeholder="auto-gerado se vazio" maxlength="80" />
+            </div>
+          </div>
+          <div class="row-2">
+            <div class="field">
+              <label>Categoria</label>
+              <input name="categoria" maxlength="60" />
+            </div>
+            <div class="field">
+              <label>Autor / @</label>
+              <input name="autor" maxlength="60" />
+            </div>
+          </div>
+          <div class="field">
+            <label>Descrição curta</label>
+            <input name="descricaoCurta" maxlength="200" />
+          </div>
+          <div class="field">
+            <label>Sobre (texto longo)</label>
+            <textarea name="sobre" rows="5" maxlength="3000"></textarea>
+          </div>
+          <div class="row-2">
+            <div class="field">
+              <label>WhatsApp (com DDI/DDD, só números)</label>
+              <input name="whatsapp" placeholder="5547999999999" maxlength="20" />
+            </div>
+            <div class="field">
+              <label>Telefone</label>
+              <input name="telefone" maxlength="20" />
+            </div>
+          </div>
+          <div class="field">
+            <label>Website</label>
+            <input name="website" type="url" maxlength="200" />
+          </div>
+          <div class="field">
+            <label>Endereço</label>
+            <input name="endereco" maxlength="200" />
+          </div>
+          <div class="field">
+            <label>URL do iframe do Google Maps</label>
+            <input name="mapaEmbedUrl" maxlength="500" placeholder="https://www.google.com/maps?q=...&output=embed" />
+          </div>
+          <div class="row-2">
+            <div class="field">
+              <label>Rating (0–5)</label>
+              <input name="rating" type="number" min="0" max="5" step="1" />
+            </div>
+            <div class="field">
+              <label>Nº de avaliações</label>
+              <input name="avaliacoes" type="number" min="0" step="1" />
+            </div>
+          </div>
+          <div class="field">
+            <label>Tags (separadas por vírgula)</label>
+            <input name="tags" placeholder="beleza, manicure, spa" maxlength="300" />
+          </div>
+          <div class="row-2">
+            <div class="field">
+              <label>URL da imagem de capa</label>
+              <input name="capaUrl" type="url" maxlength="400" />
+            </div>
+            <div class="field">
+              <label>URL do avatar</label>
+              <input name="avatarUrl" type="url" maxlength="400" />
+            </div>
+          </div>
+          <div class="field">
+            <label>Galeria (uma URL por linha)</label>
+            <textarea name="galeria" rows="4"></textarea>
+          </div>
+          <div class="field">
+            <label style="display:flex;align-items:center;gap:8px;font-weight:500">
+              <input type="checkbox" name="patrocinado" style="width:auto" />
+              Marcar como Patrocinado
+            </label>
+          </div>
+        </div>
+        <div class="modal-foot">
+          <button type="button" class="btn" id="cancel-btn">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/admin.js"></script>
+</body>
+</html>

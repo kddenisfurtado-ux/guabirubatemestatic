@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GuabirubaTem — Guia de empresas de Guabiruba, SC</title>
+  <meta name="description" content="Diretório completo de empresas, serviços, restaurantes e profissionais de Guabiruba, SC. Encontre quem você procura." />
+  <meta property="og:title" content="GuabirubaTem — Guia de empresas de Guabiruba, SC" />
+  <meta property="og:description" content="Diretório completo de empresas, serviços, restaurantes e profissionais de Guabiruba, SC." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/home.html" class="brand">Guabiruba<span class="accent">Tem</span></a>
+      <button class="menu-btn" id="menu-btn" aria-label="Menu">☰</button>
+      <nav class="nav" id="nav">
+        <a href="#">Categorias</a>
+        <a href="/home.html">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+        <a href="#vagas">Vagas</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-slides" id="hero-slides"></div>
+    <div class="hero-dots" id="hero-dots"></div>
+  </section>
+
+  <main class="container">
+    <div class="search-wrap">
+      <span>🔎</span>
+      <input id="search" type="text" placeholder="Busca por empresa, produto, serviço ou bairro..." />
+    </div>
+
+    <div class="section-head">
+      <h2>Todas as Empresas</h2>
+      <span class="count" id="count">0 resultados</span>
+    </div>
+
+    <div class="grid" id="grid"></div>
+
+    <button class="load-more" id="load-more">Carregar mais</button>
+  </main>
+
+  <footer class="site-footer" id="sobre">
+    <div class="container">
+      <div class="brand">Guabiruba<span style="color:var(--primary)">Tem</span></div>
+      <p class="desc">O guia de empresas e serviços de Guabiruba, SC.</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">ig</a>
+        <a href="#" aria-label="WhatsApp">wa</a>
+      </div>
+      <div class="foot-nav" id="contato">
+        <a href="/home.html">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="copy">© 2026 GuabirubaTem. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
